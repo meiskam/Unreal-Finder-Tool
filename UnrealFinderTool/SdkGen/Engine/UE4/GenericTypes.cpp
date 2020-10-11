@@ -105,6 +105,8 @@ std::string UEObject::GetFullName() const
 
 std::string UEObject::GetNameCpp() const
 {
+	if (GetAddress() == 0) //XXX
+		return std::string("ERROR_XXX"); //XXX
 	// Get Original Object, if not have a value update it
 	UEObject* obj = GetObjByAddress(GetAddress());
 	if (!obj->nameCpp.empty())
